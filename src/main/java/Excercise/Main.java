@@ -33,8 +33,7 @@ public class Main {
         figures[3] = rectangle;
 
         for (Figure figure : figures) {
-            figure.introduce();
+            System.out.println(figure.introduce());
         }
-        
     }
 }

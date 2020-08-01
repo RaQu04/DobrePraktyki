@@ -2,9 +2,9 @@ package Excercise;
 
 public class Triangle implements Figure {
 
-    private double a;
-    private double b;
-    private double c;
+    private final double a;
+    private final double b;
+
 
     public Triangle(double a, double b) {
         this.a = a;
@@ -18,7 +18,7 @@ public class Triangle implements Figure {
     }
 
     @Override
-    public double getSurface() {
+    public double getArea() {
         return (a * b) / 2.0;
     }
 
@@ -26,8 +26,5 @@ public class Triangle implements Figure {
         return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
     }
 
-    @Override
-    public void introduce() {
-        System.out.println("Jestem trójkątem, moje pole wynosi: " + getSurface() + " a mój obwód: " + getCircuit());
-    }
+
 }

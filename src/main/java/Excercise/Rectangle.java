@@ -1,8 +1,8 @@
 package Excercise;
 
 public class Rectangle implements Figure {
-    private double a;
-    private double b;
+    private final double a;
+    private final double b;
 
     public Rectangle(double a, double b) {
         this.a = a;
@@ -15,12 +15,9 @@ public class Rectangle implements Figure {
     }
 
     @Override
-    public double getSurface() {
+    public double getArea() {
         return a*b;
     }
 
-    @Override
-    public void introduce() {
-        System.out.println("Jestem prostokątem, moje pole wynosi: " + getSurface() + " a mój obwód: " + getCircuit());
-    }
+
 }

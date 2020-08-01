@@ -1,24 +1,19 @@
 package Excercise;
 
 public class Circle implements Figure {
-    private double r;
+    private final double radius;
 
     public Circle(double r) {
-        this.r = r;
+        this.radius = r;
     }
 
     @Override
     public double getCircuit() {
-        return 2 * Math.PI * r;
+        return 2 * Math.PI * radius;
     }
 
     @Override
-    public double getSurface() {
-        return Math.PI * Math.pow(r, 2);
-    }
-
-    @Override
-    public void introduce() {
-        System.out.println("Jestem kołem, moje pole wynosi: " + getSurface() + " a mój obwód: " + getCircuit());
+    public double getArea() {
+        return Math.PI * Math.pow(radius, 2);
     }
 }
