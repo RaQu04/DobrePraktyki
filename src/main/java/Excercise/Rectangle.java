@@ -1,8 +1,11 @@
 package Excercise;
 
 public class Rectangle extends AbstractSuperFigure implements Figure, SuperFigure {
-    private final double a;
-    private final double b;
+    private double a;
+    private double b;
+
+    private Rectangle() {
+    }
 
     public Rectangle(double a, double b) {
         this.a = a;
@@ -43,5 +46,42 @@ public class Rectangle extends AbstractSuperFigure implements Figure, SuperFigur
     @Override
     public double getY() {
         return this.y;
+    }
+
+
+    public static class Builder {
+
+        private Rectangle prototype;
+        private double a;
+        private double b;
+        private Colour colour;
+
+
+        public Builder() {
+            prototype = new Rectangle();
+        }
+
+        Rectangle build() {
+
+            return new Rectangle();
+        }
+
+        Rectangle.Builder withBaseAndHeight(double a, double b) {
+            this.a = a;
+            this.b = b;
+            return this;
+        }
+
+        Rectangle.Builder withColour(Colour colour) {
+            this.colour = colour;
+            return this;
+        }
+
+        Rectangle.Builder withCoordinatesByBuilder(double x, double y) {
+            prototype.x = x;
+            prototype.y = y;
+            return this;
+        }
+
     }
 }
