@@ -1,6 +1,6 @@
 package Excercise;
 
-public class Rectangle implements Figure {
+public class Rectangle implements Figure, SuperFigure {
     private final double a;
     private final double b;
 
@@ -20,4 +20,28 @@ public class Rectangle implements Figure {
     }
 
 
+    @Override
+    public void setColour(Colour colour) {
+
+    }
+
+    @Override
+    public Colour getColour() {
+        return null;
+    }
+
+    @Override
+    public void setCoordinates(double x, double y) {
+
+    }
+
+    @Override
+    public double getX() {
+        return 0;
+    }
+
+    @Override
+    public double getY() {
+        return 0;
+    }
 }

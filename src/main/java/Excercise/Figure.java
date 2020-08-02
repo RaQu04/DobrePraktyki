@@ -1,12 +1,12 @@
 package Excercise;
 
-public interface Figure {
+public interface Figure  {
 
     double getCircuit();
     double getArea();
 
     default String introduce(){
-        return "Jestem " + getClass().getSimpleName() +
+        return "Jestem " + this.getClass().getSimpleName() +
                 ", moje pole wynosi: " + getArea() +
                 " a mój obwód: " + getCircuit();
     }
