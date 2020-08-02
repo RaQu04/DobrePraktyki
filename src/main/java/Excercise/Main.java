@@ -21,7 +21,7 @@ public class Main {
         double firstSideRectangle = scanner.nextDouble();
         double secondSideRectangle = scanner.nextDouble();
 
-        Circle circle = new Circle(radius);
+        Circle circle = new Circle(radius, Colourable.Colour.RED);
         Triangle triangle = new Triangle(firstSide, secondSide);
         Square square = new Square(squareWall);
         Rectangle rectangle = new Rectangle(firstSideRectangle, secondSideRectangle);
@@ -31,6 +31,8 @@ public class Main {
         figures[1] = triangle;
         figures[2] = square;
         figures[3] = rectangle;
+
+        circle.setCoordinates(10,20);
 
         for (Figure figure : figures) {
             System.out.println(figure.introduce());

@@ -1,6 +1,6 @@
 package Excercise;
 
-public class Triangle implements Figure, SuperFigure {
+public class Triangle extends AbstractSuperFigure implements Figure, SuperFigure {
 
     private double base;
     private double height;
@@ -82,6 +82,9 @@ public class Triangle implements Figure, SuperFigure {
         }
 
         Triangle build() {
+            if (height <= 0 || base <= 0) {
+                throw new IllegalStateException("Base and height must be greater than 0");
+            }
             return new Triangle(this);
         }
 

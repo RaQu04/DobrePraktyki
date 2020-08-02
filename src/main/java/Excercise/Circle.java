@@ -1,11 +1,17 @@
 package Excercise;
 
-public class Circle implements Figure, SuperFigure {
-    private final double radius;
+public class Circle extends AbstractSuperFigure {
+    private double radius;
 
-    public Circle(double r) {
-        this.radius = r;
+    public Circle() {
     }
+
+    public Circle(double r, Colour colour) {
+        this.radius = r;
+        this.colour = colour;
+    }
+
+
 
     @Override
     public double getCircuit() {
@@ -17,28 +23,38 @@ public class Circle implements Figure, SuperFigure {
         return Math.PI * Math.pow(radius, 2);
     }
 
-    @Override
-    public void setColour(Colour colour) {
+    // implementacja uproszczona i niepolecana
+    // może wpływać na logike konstruktora
+    public static class Builder {
 
+        private final Circle prototype;
+
+        public Builder() {
+            prototype = new Circle();
+        }
+
+        Circle build(){
+            if (prototype.radius <= 0) {
+                throw new IllegalStateException("Circle radius must be greater than zero");
+            }
+            return prototype;
+        }
+
+        Builder withRadius(double radius) {
+            prototype.radius = radius;
+            return this;
+        }
+
+        Builder withColour(Colour colour) {
+            prototype.colour = colour;
+            return this;
+        }
+
+        Builder withCoordinates(double x, double y) {
+            prototype.x = x;
+            prototype.y = y;
+            return this;
+        }
     }
 
-    @Override
-    public Colour getColour() {
-        return null;
-    }
-
-    @Override
-    public void setCoordinates(double x, double y) {
-
-    }
-
-    @Override
-    public double getX() {
-        return 0;
-    }
-
-    @Override
-    public double getY() {
-        return 0;
-    }
 }

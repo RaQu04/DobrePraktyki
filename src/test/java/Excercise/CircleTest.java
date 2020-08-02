@@ -14,7 +14,7 @@ public class CircleTest{
 
     @BeforeEach
     void setUp(){
-        testCircle = new Circle(Test_Radius);
+        testCircle = new Circle(Test_Radius, Colourable.Colour.WHITE);
     }
 
     @Test

@@ -1,6 +1,6 @@
 package Excercise;
 
-public class Rectangle implements Figure, SuperFigure {
+public class Rectangle extends AbstractSuperFigure implements Figure, SuperFigure {
     private final double a;
     private final double b;
 
@@ -37,11 +37,11 @@ public class Rectangle implements Figure, SuperFigure {
 
     @Override
     public double getX() {
-        return 0;
+        return this.x;
     }
 
     @Override
     public double getY() {
-        return 0;
+        return this.y;
     }
 }

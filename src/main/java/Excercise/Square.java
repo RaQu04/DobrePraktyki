@@ -1,6 +1,6 @@
 package Excercise;
 
-public class Square implements Figure, SuperFigure {
+public class Square extends AbstractSuperFigure implements Figure, SuperFigure {
     private double side;
     private Colour colour;
     private double x;
